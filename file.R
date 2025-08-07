@@ -15,7 +15,8 @@ plot = ggplot(data = data)+
   geom_line(mapping = aes(x = years,y = X.temperature.t2m...modification.tp....273.15))+
   geom_point(mapping = aes(x = years,y = X.temperature.t2m...modification.tp....273.15),color = "blue")+
   geom_smooth(mapping = aes(x = years,y = X.temperature.t2m...modification.tp....273.15))+
-  labs(title = "Annual temperature of September 22 for Morondava (1962-2025)",x = "Years",y = "temperature[°C]")
+  labs(title = "Annual temperature of September 22 for Morondava (1962-2025)",x = "Years",y = "temperature[°C]")+
+  scale_x_continuous(name = "years", breaks = seq(1962,2026,by = 4))
 
 print(plot)
 #descriptive statistics
@@ -44,7 +45,7 @@ mean_interval = function(x,y,n){
   B = x + u_alpha*(y/sqrt(n-1))
   return (c(A,B))
 }
-print(mean_interval(mean,std,length(data$X.temperature.t2m...modification.tp....273.15)))
+print(mean_interval(mean,sdt,length(data$X.temperature.t2m...modification.tp....273.15)))
 #searching if the first period is warmer than second period
 test = function(x1,x2,sigma1,sigma2,n1,n2){
   T = abs(x1 - x2)/sqrt((sigma1**2/(n1 - 1))+(sigma2**2/(n2 - 1)))
@@ -58,3 +59,4 @@ test = function(x1,x2,sigma1,sigma2,n1,n2){
   }
 }
 print(test(p1_mean,p2_mean,p1_std,p2_std,length(period_1),length(period_2)))
+

@@ -15,7 +15,7 @@ plot = ggplot(data = data)+
   geom_line(mapping = aes(x = years,y = X.temperature.t2m...modification.tp....273.15))+
   geom_point(mapping = aes(x = years,y = X.temperature.t2m...modification.tp....273.15),color = "blue")+
   geom_smooth(mapping = aes(x = years,y = X.temperature.t2m...modification.tp....273.15))+
-  labs(title = "Annual temperature of September 22 for Morondava (1961-2024)",x = "Years",y = "temperature[°C]")+
+  labs(title = "Temperature of September 22 for Morondava (1961-2024)",x = "Years",y = "temperature[°C]")+
   scale_x_continuous(name = "years", breaks = seq(1961,2026,by = 4))
 
 print(plot)

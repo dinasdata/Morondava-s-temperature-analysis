@@ -18,4 +18,4 @@ the Zazamala national park, the beach, etc...The climate of this area is tropica
 <ul/>
 <h2>Tools and method</h2>
 <ul><li>R 4.3.3</li>
-  <li> and Rstudio 2025.05.0</li></ul>
+  <li>Rstudio 2025.05.0</li></ul>
